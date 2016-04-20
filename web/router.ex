@@ -18,11 +18,11 @@ defmodule Phsand2.Router do
 
     get "/", PageController, :index
     get "/hello", PageController, :hello
-    resources "/notes", NoteController, except: [:new, :edit]
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Phsand2 do
-  #   pipe_through :api
-  # end
+  scope "/api/", Phsand2 do
+    pipe_through :api
+
+    resources "/notes", NoteController, except: [:new, :edit]
+  end
 end
