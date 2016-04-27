@@ -24,6 +24,7 @@ defmodule Phsand2.Router do
     pipe_through :api
 
     resources "/notes", NoteController, except: [:new, :edit]
+    resources "/users", UserController, except: [:new, :edit]
     # /api/dynamic* というパターンにマッチして、params = %{"path" => dynamic...} と入る
     get "/dynamic*path", NotFoundController, :index
   end

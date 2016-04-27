@@ -8,8 +8,8 @@ defmodule Phsand2.Note do
     timestamps
   end
 
-  @required_fields ~w(title body)
-  @optional_fields ~w()
+  @required_fields ~w(title body)a
+  @optional_fields ~w()a
 
   @doc """
   Creates a changeset based on the `model` and `params`.
