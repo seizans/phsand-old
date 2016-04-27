@@ -26,10 +26,7 @@ defmodule Phsand2.ModelCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Phsand2.Repo, [])
-    end
-
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Phsand2.Repo)
     :ok
   end
 
